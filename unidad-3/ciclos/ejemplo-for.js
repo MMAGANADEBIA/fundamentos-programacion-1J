@@ -9,6 +9,30 @@ btn3.addEventListener('click', ejemplo3);
 var btn4 = document.querySelector('#btn4');
 btn4.addEventListener('click', ejemplo4);
 var opciones = document.querySelector('#opciones');
+var btn5 = document.querySelector('#btn5');
+btn5.addEventListener('click', ejemplo5);
+var lienzo = document.querySelector('#lienzo');
+
+function ejemplo5(){
+    var c = lienzo.getContext('2d');
+    var i = 0;
+
+    do{
+    var x = Math.trunc((Math.random() * 501) + 1);
+    var y = Math.trunc((Math.random() * 501) + 1);
+    var r = Math.trunc((Math.random() * 50) + 1);
+    
+    if (x > 250){
+        break;
+    }
+
+    c.beginPath();
+    c.fillStyle = 'rgba(0,255,0,0.5)';
+    c.arc(x, y, r, 0, 2*Math.PI);
+    c.fill();
+    i++;
+    }while(i < 30);
+}
 
 function ejemplo4(){
     var fin = Number(numero.value);
